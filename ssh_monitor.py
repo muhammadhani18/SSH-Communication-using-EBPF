@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-# Import necessary libraries
-from bcc import BPF  # Interface with eBPF
-from datetime import datetime  # For handling timestamps
-import pwd  # To resolve user IDs to usernames
-import signal  # To handle signals (e.g., Ctrl+C)
-import sys  # To handle program exit
-from collections import defaultdict  # For managing SSH session data
-import time  # For handling time calculations
 
-# eBPF Program written in C
+from bcc import BPF  
+from datetime import datetime  
+import pwd  
+import signal  
+import sys  
+from collections import defaultdict  
+import time  
+
+
 bpf_text = """
 #include <uapi/linux/ptrace.h>  // Provides definitions for tracing
 #include <linux/sched.h>        // Access to task_struct
